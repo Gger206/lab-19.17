@@ -16,9 +16,18 @@ void testFind() {
     assert(*found == 'W' && *found2 == ',');
 }
 
+void testFindNonSpace() {
+    char str[] = "   Hello, World!  ";
+    char str2[] = "A        W";
+    char *nonSpace = findNonSpace(str);
+    char *nonSpace2 = findNonSpace(str2);
+    assert(*nonSpace == 'H' && *nonSpace2 == 'A');
+}
+
 int main() {
     testStrlen();
     testFind();
+    testFindNonSpace()
 
     return 0;
 
