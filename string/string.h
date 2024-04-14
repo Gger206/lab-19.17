@@ -54,4 +54,13 @@ int strcmp(const char *lhs, const char *rhs) {
     return *lhs - *rhs;
 }
 
+char* copy(const char *beginSource, const char *endSource, char *beginDestination) {
+    while (beginSource != endSource) {
+        *beginDestination = *beginSource;
+        beginSource++;
+        beginDestination++;
+    }
+    return beginDestination;
+}
+
 #endif
