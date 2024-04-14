@@ -24,10 +24,19 @@ void testFindNonSpace() {
     assert(*nonSpace == 'H' && *nonSpace2 == 'A');
 }
 
+void testFindSpace() {
+    char str[] = "Hello, World!";
+    char str2[] = "H e l l o, W o r l d !";
+    char *space = findSpace(str);
+    char *space2 = findSpace(str2);
+    assert(*space == ' ' && *space2 == ' ');
+}
+
 int main() {
     testStrlen();
     testFind();
-    testFindNonSpace()
+    testFindNonSpace();
+    testFindSpace();
 
     return 0;
 
