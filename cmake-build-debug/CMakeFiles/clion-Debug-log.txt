@@ -5,6 +5,6 @@
 -- Check for working C compiler: C:/Program Files/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe - skipped
 -- Detecting C compile features
 -- Detecting C compile features - done
--- Configuring done (1.8s)
+-- Configuring done (1.9s)
 -- Generating done (0.0s)
 -- Build files have been written to: D:/BSTU Shukhov/LionProjects/lab 19.17/cmake-build-debug
