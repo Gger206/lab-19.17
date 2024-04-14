@@ -9,8 +9,16 @@ void testStrlen() {
     assert(length1 == 13 && length2 == 0);
 }
 
+void testFind() {
+    char str[] = "Hello, World!";
+    char *found = find(str, str + 13, 'W');
+    char *found2 = find(str, str + 13, ',');
+    assert(*found == 'W' && *found2 == ',');
+}
+
 int main() {
     testStrlen();
+    testFind();
 
     return 0;
 
