@@ -82,6 +82,16 @@ void testCopyIf() {
     assert(*destination2 == '1' && *(destination2 + 1) == '2' && *(destination2 + 2) == '3' && *(destination2 + 3) == '4');
 }
 
+void testCopyIfReverse() {
+    char* str = "Hello123World456";
+    char destination[20];
+    char destination2[20];
+    copyIfReverse(str + 14, str, destination, isLetter);
+    copyIfReverse(str + 14, str, destination2, isdigit);
+    assert(*destination == 'd' && *(destination + 1) == 'l' && *(destination + 2) == 'r' && *(destination + 3) == 'o' && *(destination + 4) == 'W');
+    assert(*destination2 == '4' && *(destination2 + 1) == '3' && *(destination2 + 2) == '2' && *(destination2 + 3) == '1');
+}
+
 int main() {
     testStrlen();
     testFind();
@@ -92,6 +102,7 @@ int main() {
     testStrcmp();
     testCopy();
     testCopyIf();
+    testCopyIfReverse();
 
     return 0;
 
