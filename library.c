@@ -9,10 +9,15 @@ void testStrlen() {
     assert(length1 == 13 && length2 == 0);
 }
 
-
+void testFind(){
+    char str[] = "find test";
+    char *found = find(str, str + 9, 'e');
+    assert(*found == 'e');
+}
 
 int main() {
     testStrlen();
+    testFind();
 
 return 0;
 
