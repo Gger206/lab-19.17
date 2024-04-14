@@ -1,6 +1,10 @@
 #include "string/string.h"
 #include <assert.h>
 
+int isLetter(int c) {
+    return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z');
+}
+
 void testStrlen() {
     const char *str = "Hello, World!";
     const char *str2 = "";
@@ -68,6 +72,16 @@ void testCopy() {
     assert(nextFree - destination == 14 && nextFree2 - destination == 7);
 }
 
+void testCopyIf() {
+    char* str = "Hello123World456";
+    char destination[20];
+    char destination2[20];
+    copyIf(str, str + 14, destination, isLetter);
+    copyIf(str, str + 14, destination2, isdigit);
+    assert(*destination == 'H' && *(destination + 1) == 'e' && *(destination + 2) == 'l' && *(destination + 3) == 'l' && *(destination + 4) == 'o');
+    assert(*destination2 == '1' && *(destination2 + 1) == '2' && *(destination2 + 2) == '3' && *(destination2 + 3) == '4');
+}
+
 int main() {
     testStrlen();
     testFind();
@@ -77,6 +91,7 @@ int main() {
     testFindSpaceReverse();
     testStrcmp();
     testCopy();
+    testCopyIf();
 
     return 0;
 
