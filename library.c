@@ -51,6 +51,14 @@ void testFindSpaceReverse() {
     assert(*rbegin == 'W' && *rbegin2 == 'o');
 }
 
+void testStrcmp() {
+    const char *str1 = "Hello";
+    const char *str2 = "World";
+    const char *str3 = "Hello";
+
+    assert(strcmp(str1, str2) < 0 && strcmp(str1, str3) >= 0);
+}
+
 int main() {
     testStrlen();
     testFind();
@@ -58,6 +66,7 @@ int main() {
     testFindSpace();
     testFindNonSpaceReverse();
     testFindSpaceReverse();
+    testStrcmp();
 
     return 0;
 
