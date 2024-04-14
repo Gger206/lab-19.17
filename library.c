@@ -32,11 +32,22 @@ void testFindSpace() {
     assert(*space == ' ' && *space2 == ' ');
 }
 
+void testFindNonSpaceReverse() {
+    char str[] = "   Hello, World!  ";
+    char str2[] = "Hello, World!   ";
+    char *rend = str - 1;
+    char *rend2 = str2 - 1;
+    char *rbegin = findNonSpaceReverse(str + 15, rend);
+    char *rbegin2 = findNonSpaceReverse(str2 + 10, rend2);
+    assert(*rbegin == '!' && *rbegin2 == 'l');
+}
+
 int main() {
     testStrlen();
     testFind();
     testFindNonSpace();
     testFindSpace();
+    testFindNonSpaceReverse();
 
     return 0;
 
