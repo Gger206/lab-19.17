@@ -59,6 +59,15 @@ void testStrcmp() {
     assert(strcmp(str1, str2) < 0 && strcmp(str1, str3) >= 0);
 }
 
+void testCopy() {
+    const char *str = "Hello, World!";
+    const char *str2 = ",World!";
+    char destination[20];
+    char *nextFree = copy(str, str + 14, destination);
+    char *nextFree2 = copy(str2, str2 + 7, destination);
+    assert(nextFree - destination == 14 && nextFree2 - destination == 7);
+}
+
 int main() {
     testStrlen();
     testFind();
@@ -67,6 +76,7 @@ int main() {
     testFindNonSpaceReverse();
     testFindSpaceReverse();
     testStrcmp();
+    testCopy();
 
     return 0;
 
